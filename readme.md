@@ -14,7 +14,7 @@ The project is built on MATLAB/Simulink and includes a master script to automate
 
 1. Open MATLAB.
 
-2. Ensure both master_experiments.m and l1_lqr.slx are in the current working directory.
+2. Ensure both `master_experiments.m` and `l1_lqr.slx` are in the current working directory.
 
 3. Type master_experiments in the Command Window and press Enter.
 
