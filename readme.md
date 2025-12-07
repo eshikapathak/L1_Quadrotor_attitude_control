@@ -92,4 +92,4 @@ All critical parameters are defined in the Global Initialization section at the 
 * Transport Delay Warnings: If you see warnings about "delay smaller than step size," this is expected during Time Delay Margin (TDM) sweeps where we test delays close to zero. The script handles this by forcing a small non-zero delay (1e-7) for the zero case.
 * Slow Simulations (TDM Sweeps): Experiments may run slower because they sweep the system to the point of instability. For these experiments, you can use specific solver settings (ode23t with relaxed tolerances) to keep runtimes reasonable.
 * Algebraic Loops: The model uses a Transport Delay (or Memory block) in the feedback loop to break algebraic loops required by the L1 architecture. Do not remove this delay block.
-* Control affine state-predictor: We have also provided code (commented out in the state-predictor block) for a state-predictor of the form f(x) + Bu.
+* Control affine state-predictor: We have also provided code (commented out in the state-predictor block) for a state-predictor of the form $f(x, u) + Bu$.
