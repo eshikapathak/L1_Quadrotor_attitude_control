@@ -18,7 +18,7 @@ The project is built on MATLAB/Simulink and includes a master script to automate
 
 3. Type master_experiments in the Command Window and press Enter.
 
-4. The script will pause and display a menu of 19 Experiments.
+4. The script will pause and display a menu of sample Experiments.
 
 5. Enter the number of the experiment you wish to run (e.g., 1 for basic Disturbance Rejection) and press Enter.
 
@@ -26,25 +26,25 @@ The project is built on MATLAB/Simulink and includes a master script to automate
 
 The script supports the following test scenarios:
 
-* Disturbance Rejection: Compare LQR vs L1+LQR vs MRAC holding a 0-degree setpoint against sinusoidal disturbance.
+   * Disturbance Rejection: Compare LQR vs L1+LQR vs MRAC holding a 0-degree setpoint against sinusoidal disturbance.
 
-* Tracking Performance: Compare controllers tracking Step ($10^\circ, 40^\circ$) and Sine wave references.
+   * Tracking Performance: Compare controllers tracking Step ($10^\circ, 40^\circ$) and Sine wave references.
 
-* Ts Sweep: Analyze how Sampling Time ($T_s$) affects RMSE.
+   * Ts Sweep: Analyze how Sampling Time ($T_s$) affects RMSE.
 
-* MRAC Gain Sweep: Plot RMSE vs Adaptation Gain ($\Gamma$).
+   * MRAC Gain Sweep: Plot RMSE vs Adaptation Gain ($\Gamma$).
 
-* Filter BW Sweep (Dist Freq): RMSE vs Filter Bandwidth ($f_c$) for different disturbance frequencies (1st Order LPF).
+   * Filter BW Sweep (Dist Freq): RMSE vs Filter Bandwidth ($f_c$) for different disturbance frequencies (1st Order LPF).
 
-* Filter BW Sweep (Dist Amp): RMSE vs Filter Bandwidth for different disturbance amplitudes.
+   * Filter BW Sweep (Dist Amp): RMSE vs Filter Bandwidth for different disturbance amplitudes.
 
-* Control Signal Analysis: Detailed time-domain and frequency-domain (FFT) plots of control signals for varying filter bandwidths.
+   * Control Signal Analysis: Detailed time-domain and frequency-domain (FFT) plots of control signals for varying filter bandwidths.
 
-* Disturbance (Triangle): Tests rejection of non-smooth triangle wave disturbances.
+   * Disturbance (Triangle): Tests rejection of non-smooth triangle wave disturbances.
 
-* State-Dependent Disturbance: Tests rejection of nonlinear $d(x) = 2\sin(3\phi)\dot{\phi}$ disturbance.
+   * State-Dependent Disturbance: Tests rejection of nonlinear $d(x) = 2\sin(3\phi)\dot{\phi}$ disturbance.
 
-* MRAC TDM vs Gain: Plots Time Delay Margin vs MRAC Adaptation Gain.
+   * MRAC TDM vs Gain: Plots Time Delay Margin vs MRAC Adaptation Gain.
 
 ## ⚙️ Configuration & Tuning
 
@@ -52,13 +52,13 @@ All critical parameters are defined in the Global Initialization section at the 
 
 1. Plant & Physics
 
-* `P.m`, `P.Ix`, `P.Iy`, `P.Iz`: Mass and Inertia properties.
+   * `P.m`, `P.Ix`, `P.Iy`, `P.Iz`: Mass and Inertia properties.
 
-* `P.L`: Quadrotor arm length.
+   * `P.L`: Quadrotor arm length.
 
 2. Baseline LQR
 
-* `Q`, `R`: Weight matrices for the LQR design. Modify these to change the baseline stiffness.
+   * `Q`, `R`: Weight matrices for the LQR design. Modify these to change the baseline stiffness.
 
 3. L1 Adaptive Control
    
@@ -79,13 +79,13 @@ All critical parameters are defined in the Global Initialization section at the 
 5. Simulink Internals 
    If you need to modify the internal logic, double-click the MATLAB Function blocks in l1_lqr.slx:
 
-  * `DisturbanceGen`: Logic for Sine (0), Sum of Sines (1), Triangle (2), and State-Dependent (3) disturbances.
+     * `DisturbanceGen`: Logic for Sine (0), Sum of Sines (1), Triangle (2), and State-Dependent (3) disturbances.
 
-  * `ReferenceGen`: Logic for Step (0) vs Sine (1) reference trajectories.
+     * `ReferenceGen`: Logic for Step (0) vs Sine (1) reference trajectories.
 
-  * `StatePredictor`: The linear/nonlinear(commented-out) predictor dynamics $\dot{\hat{x}} = f(\hat{x}, u) + \hat{\sigma} + A_e \tilde{x}$.
+     * `StatePredictor`: The linear/nonlinear(commented-out) predictor dynamics $\dot{\hat{x}} = f(\hat{x}, u) + \hat{\sigma} + A_e \tilde{x}$.
 
-  * `MRAC_Controller`: Implementation of the adaptive law $\dot{\hat{K}} = \Gamma \dots$ with Projection Operator.
+     * `MRAC_Controller`: Implementation of the adaptive law $\dot{\hat{K}} = \Gamma \dots$ with Projection Operator.
 
 ## ⚠️ Troubleshooting & Notes
 
