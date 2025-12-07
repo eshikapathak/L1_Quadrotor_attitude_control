@@ -26,7 +26,7 @@ The project is built on MATLAB/Simulink and includes a master script to automate
 
 The script supports the following test scenarios:
 
-   * Disturbance Rejection: Compare LQR vs L1+LQR vs MRAC holding a 0-degree setpoint against sinusoidal disturbance.
+   * Disturbance Rejection: Compare LQR vs L1+LQR vs MRAC holding a 30-degree setpoint against sinusoidal disturbance.
 
    * Tracking Performance: Compare controllers tracking Step ($10^\circ, 40^\circ$) and Sine wave references.
 
