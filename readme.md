@@ -2,7 +2,7 @@
 
 This repository contains a simulation environment for comparing **L1 Adaptive Control, Model Reference Adaptive Control (MRAC)**, and **Baseline LQR** for quadrotor attitude tracking.
 
-The project is built on MATLAB/Simulink and includes a master script to automate various experiments, including disturbance rejection, reference tracking, parameter sweeps and (sampling time, filter bandwidth, delay margin).
+The project is built on MATLAB/Simulink and includes a master script to automate various experiments, including disturbance rejection, reference tracking, and parameter sweeps (sampling time, filter bandwidth, delay margin).
 
 ## 📂 File Structure
 
