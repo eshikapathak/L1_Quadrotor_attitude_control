@@ -34,7 +34,7 @@ The script supports the following test scenarios:
 
    * MRAC Gain Sweep: Plot RMSE vs Adaptation Gain ($\Gamma$).
 
-   * Filter BW Sweep (Dist Freq): RMSE vs Filter Bandwidth ($f_c$) for different disturbance frequencies (1st Order LPF).
+   * Filter BW Sweep (Dist Freq): RMSE vs Filter Bandwidth ($w_c$) for different disturbance frequencies (1st Order LPF).
 
    * Filter BW Sweep (Dist Amp): RMSE vs Filter Bandwidth for different disturbance amplitudes.
 
