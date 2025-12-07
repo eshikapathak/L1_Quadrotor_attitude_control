@@ -93,4 +93,4 @@ All critical parameters are defined in the Global Initialization section at the 
 * Slow Simulations (TDM Sweeps): Experiments may run slower because they sweep the system to the point of instability. For these experiments, you can use specific solver settings (ode23t with relaxed tolerances) to keep runtimes reasonable.
 * Algebraic Loops: The model uses a Transport Delay (or Memory block) in the feedback loop to break algebraic loops required by the L1 architecture. Do not remove this delay block.
 * Control affine state-predictor: We have also provided code (commented out in the state-predictor block) for a state-predictor of the form $f(x, u) + Bu$.
-* Aggressive LQR: Sometimes, making the LQR params aggressive can lead to a slower simulation, i.e. the experiment takes longer to end. 
+* Aggressive LQR: Sometimes, making the LQR params larger/aggressive can lead to a slower simulation, i.e. the experiment takes longer to end. 
