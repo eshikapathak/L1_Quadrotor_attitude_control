@@ -83,9 +83,9 @@ All critical parameters are defined in the Global Initialization section at the 
 
      * `ReferenceGen`: Logic for Step (0) vs Sine (1) reference trajectories.
 
-     * `StatePredictor`: The linear/nonlinear(commented-out) predictor dynamics $\dot{\hat{x}} = f(x, u) + \hat{\sigma} + A_e \tilde{x}$.
+     * `StatePredictor`: The linear/nonlinear(commented-out) predictor dynamics 
 
-     * `MRAC_Controller`: Implementation of the adaptive law $\dot{\hat{K}} = \Gamma \dots$ with Projection Operator.
+     * `MRAC_Controller`: Implementation of the MRAC adaptive laws with Projection Operator.
 
 ## ⚠️ Troubleshooting & Notes
 
